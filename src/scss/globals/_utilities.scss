@@ -1,0 +1,13 @@
+@use './config' as *;
+@use './typography' as *;
+
+
+
+.container {
+    max-width: $break-xl;
+    margin-inline: auto;
+}
+
+.title {
+    @include title-format;
+}

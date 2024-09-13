@@ -1,0 +1,26 @@
+@use '../globals/typography' as *;
+@use '../globals/config' as *;
+
+.about {
+    display: grid;
+    padding-block: 6rem;
+    gap: 3rem;
+    &__image {
+        width: 100%;
+        height: auto;
+    }
+    &__text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        & .title {
+            @include title-format;
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+        & .description {
+            color: $clr-gray-dark;
+        }
+    }
+}
