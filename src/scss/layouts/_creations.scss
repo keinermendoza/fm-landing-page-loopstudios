@@ -1,3 +1,37 @@
 @use '../globals/typography' as *;
 @use '../globals/config' as *;
 
+.creations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6rem;
+
+    .title-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3.375rem;
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 1.75rem;
+        }
+        .button-primary {
+            display: none;
+        }
+    }
+
+    .gallery {
+        display: grid;
+        gap: 1.5rem;
+        font-size: 1.35rem;
+        margin-bottom: 2.125rem;
+    }
+
+    .button-secondary {
+        display: flex;
+        margin-inline: auto;
+    }
+
+}
+

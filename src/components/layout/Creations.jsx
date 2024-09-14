@@ -29,49 +29,52 @@ import coconutDesktop from "/images/desktop/image-fisheye.jpg"
 export default function Creations() {
   return (
     <section className='creations'>
-        <h2 className='title'>Our creations</h2>
+        <div className="title-row">
+            <h2 className='title'>Our creations</h2>
+            <a href="#see-all" className="button button-primary">see all</a>
+        </div>
         <div className='gallery'>
             <CreationCard 
-                title='Deep earth'
                 largeImage={earthDesktop}
-                smallImage={earthMobile}
-            />
+                smallImage={earthMobile}>
+                Deep <br /> earth
+            </CreationCard >
             <CreationCard 
-                title='Night arcade'
                 largeImage={arcadeDesktop}
-                smallImage={arcadeMobile}
-            />
+                smallImage={arcadeMobile}>
+                night <br />arcade</CreationCard>
             <CreationCard 
-                title='Soccer team VR'
                 largeImage={footballDesktop}
-                smallImage={footballMobile}
-            />
+                smallImage={footballMobile}>
+                Soccer <br /> team VR
+            </CreationCard>
             <CreationCard 
-                title='The grid'
                 largeImage={carDesktop}
-                smallImage={carMobile}
-            />
+                smallImage={carMobile}>
+                The <br /> grid
+            </CreationCard>
             <CreationCard 
-                title='From up above VR'
                 largeImage={roadDesktop}
-                smallImage={roadMobile}
-            />
+                smallImage={roadMobile}>
+                From up <br /> above VR
+            </CreationCard>
             <CreationCard 
-                title='Pocket borealis'
                 largeImage={boreallsDesktop}
-                smallImage={boreallsMobile}
-            />
+                smallImage={boreallsMobile}>
+                Pocket <br /> borealis
+            </CreationCard>
             <CreationCard 
-                title='The curiosity'
                 largeImage={exploreDesktop}
-                smallImage={exploreMobile}
-            />
+                smallImage={exploreMobile}>
+                The <br /> curiosity
+            </CreationCard>
             <CreationCard 
-                title='Make it fisheye'
                 largeImage={coconutDesktop}
-                smallImage={coconutMobile}
-            />
+                smallImage={coconutMobile}>
+                Make it <br /> fisheye
+            </CreationCard>
         </div>
+        <a href="#see-all" className="button button-secondary">see all</a>
     </section>
   )
 }

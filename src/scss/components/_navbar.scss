@@ -1,0 +1,105 @@
+@use '../globals/typography' as *;
+@use '../globals/config' as *;
+
+
+/* position is absolute beacause the page title must to be 
+alined vertically in mobile */
+.header__navegation {
+    position:absolute;
+    left:0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.25rem $mobile-inline-padding 0;
+
+    // logo row is fixed in top for MOBILE
+    &.isOpen {
+        position:fixed;
+        z-index: 20;
+    }
+
+    // navbar is in the normal flow for DESKTOP
+    @media (min-width: $break-md) {
+        position:static;
+        padding: 0;
+        padding-top: 3.875rem;
+        &.isOpen {
+            position:static;
+        }
+    }
+
+    
+    // NAVLIST takes all the window when open in MOBILE
+    .navegation__list {
+        padding-inline: $mobile-inline-padding;
+        background-color: $clr-black;
+        color: $clr-white;
+
+        align-items: start;
+        gap: $mobile-inline-padding;
+
+        min-height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        transition: left 250ms;
+
+        
+
+        // NAVLIST takes only the required size in DESKTOP
+        @media (min-width: $break-md) {
+            gap: 2rem;
+
+            padding: 0;
+            background-color: transparent;
+            min-height: auto;
+            position: static;
+            flex-direction: row;
+            justify-content: end;
+            width: fit-content;
+        }
+
+        /* ADD enter effect to LINKS in MOBILE */  
+        & .nav-item {
+            overflow: hidden;
+            font-size: 1.5rem;
+
+            & .nav-link {
+                display: inline-block;                
+                transform: translate(0, 100%);
+                transition: transform 250ms;
+                transition-delay: 250ms;
+                
+                /* DELETE effect to LINKS in DESKTOP */  
+                @media (min-width: $break-md) {
+                    font-size: 1rem;
+                    text-transform: none;
+                    transform: none;
+                }
+            }
+
+        }
+
+        // ADD enter effect to NAVLIST in MOBILE  
+        &.isOpen {
+            left:0;
+            & .nav-link {
+                transform: translate(0, 0);
+            }
+        }
+        
+        
+    }
+
+    .toogle-button {
+        z-index: 10;
+        display: grid;
+        place-content: center;
+        @media (min-width: $break-md) {
+            display: none;
+        }
+    }
+}

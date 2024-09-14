@@ -1,0 +1,27 @@
+@use '../globals/typography' as *;
+@use '../globals/config' as *;
+
+.footer {
+    padding-block: 3.5rem;
+    padding-inline: $mobile-inline-padding;
+    background-color: $clr-black;
+    color: $clr-white;
+    text-align: center;
+    .brand-logo {
+        margin-bottom: 2.25rem;
+    }
+    .navegation {
+        margin-bottom: 3rem;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }    
+    .author-owner {
+        color: $clr-gray-dark;
+    }
+
+}
