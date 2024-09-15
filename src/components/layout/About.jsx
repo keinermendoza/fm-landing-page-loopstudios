@@ -3,7 +3,7 @@ import interactiveImg from '/images/mobile/image-interactive.jpg'
 
 export default function About() {
   return (
-    <section className='about'>
+    <section className='about container'>
       <img className='about__image' src={interactiveImg} alt="" />
       <div className='about__text'>
         <h2 className='title'>The leader in interactive VR</h2>

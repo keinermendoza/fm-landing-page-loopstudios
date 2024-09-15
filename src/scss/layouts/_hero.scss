@@ -1,5 +1,4 @@
-@use '../globals/typography' as *;
-@use '../globals/config' as *;
+@use '../globals/variables' as *;
 
 .header {
     padding-inline: $mobile-inline-padding;

@@ -1,26 +1,54 @@
-@use '../globals/typography' as *;
-@use '../globals/config' as *;
+@use '../globals/variables' as *;
 
 .about {
     display: grid;
     padding-block: 6rem;
     gap: 3rem;
+
+    @media (min-width: $break-md) {
+        padding-block: 10rem;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: repeat(11,1fr);
+    }
+    
     &__image {
         width: 100%;
         height: auto;
+        object-position: cover;
+        @media (min-width: $break-md) {
+            grid-column: 1 / 5;
+            grid-row: 1 / 12;
+        }
     }
     &__text {
         text-align: center;
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        background-color: $clr-white;
+
+        @media (min-width: $break-md) {
+            $incremental-padding: clamp(2.5rem, 1rem + 6vw, 6rem);
+            text-align: left;
+            padding: $incremental-padding 0 0 $incremental-padding;
+            grid-column: 3 / 7;
+            grid-row: 4 / 12;
+        }
+
+        @media (min-width: $break-xl) {
+            grid-column: 4 / 7;
+            grid-row: 5 / 12;    
+        }
+        
         & .title {
             @include title-format;
-            font-size: 2rem;
+            font-size:  $fs-desktop-h2;
             line-height: 1.1;
         }
         & .description {
             color: $clr-gray-dark;
+            line-height: 1.6;
+
         }
     }
 }

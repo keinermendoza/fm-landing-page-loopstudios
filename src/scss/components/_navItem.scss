@@ -1,4 +1,4 @@
-@use '../globals/config' as *;
+@use '../globals/variables' as *;
 
 @media (min-width: $break-md) {
     /* effect adapted from https://css-irl.info/animating-underlines/ */
@@ -9,7 +9,7 @@
     .nav-item::after  {
         content: '';
         position: absolute;
-        bottom: -.5em;
+        bottom: -.5rem;
         left: 0;
         width: 100%;
         height: 1px;

@@ -28,7 +28,7 @@ import coconutDesktop from "/images/desktop/image-fisheye.jpg"
 
 export default function Creations() {
   return (
-    <section className='creations'>
+    <section className='creations container'>
         <div className="title-row">
             <h2 className='title'>Our creations</h2>
             <a href="#see-all" className="button button-primary">see all</a>

@@ -1,11 +1,12 @@
-@use '../globals/typography' as *;
-@use '../globals/config' as *;
+@use '../globals/variables' as *;
 
+/* this compoenet also make use of the next rules:
+    - navegation__list : src/scss/globals/_utilities.scss
+    - nav-item: src/scss/components/_navitem.scss
+*/
 
-/* position is absolute beacause the page title must to be 
-alined vertically in mobile */
 .header__navegation {
-    position:absolute;
+    position:absolute; // helps to aling vertically  PAGE TITLE in mobile
     left:0;
     top: 0;
     width: 100%;
@@ -32,21 +33,30 @@ alined vertically in mobile */
     }
 
     
-    // NAVLIST takes all the window when open in MOBILE
+    // NAVLIST takes all the window when is "opened" in MOBILE
     .navegation__list {
         padding-inline: $mobile-inline-padding;
         background-color: $clr-black;
         color: $clr-white;
-
         align-items: start;
         gap: $mobile-inline-padding;
-
         min-height: 100vh;
         position: fixed;
         top: 0;
         left: 100%;
         transition: left 250ms;
 
+        // the precense of isOpen toogles the animations
+        &.isOpen {
+            // enter NAVLIST using SLIDE effect in MOBILE  
+            left:0;
+            & .nav-item {
+                & .nav-link {
+                    // shows links using SLIDE effect in MOBILE  
+                    transform: translate(0, 0);
+                }
+            }
+        }
         
 
         // NAVLIST takes only the required size in DESKTOP
@@ -66,6 +76,11 @@ alined vertically in mobile */
         & .nav-item {
             overflow: hidden;
             font-size: 1.5rem;
+        
+            /* RESTORE overflow behavior in DESKTOP */  
+            @media (min-width: $break-md) {
+                overflow: initial;
+            }
 
             & .nav-link {
                 display: inline-block;                
@@ -83,13 +98,7 @@ alined vertically in mobile */
 
         }
 
-        // ADD enter effect to NAVLIST in MOBILE  
-        &.isOpen {
-            left:0;
-            & .nav-link {
-                transform: translate(0, 0);
-            }
-        }
+       
         
         
     }

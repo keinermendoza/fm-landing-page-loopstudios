@@ -1,0 +1,40 @@
+$fs-base: 0.938rem;
+$fs-desktop-h2:clamp(1rem, 1rem + 2vw, 3rem);
+$ff-titles: 'Josefin Sans', 'sans-serif';
+$ff-body: 'Alata', 'sans';
+
+$clr-white: hsl(0, 0%, 100%);
+$clr-gray:hsl(0, 0%, 55%);
+$clr-gray-dark: hsl(0, 0%, 41%);
+$clr-black: hsl(0, 0%, 0%);
+$clr-primary: hsl(310, 72%, 60%);
+
+$mobile-inline-padding: 1.5rem;
+$desktop-inline-padding: clamp(2rem, 2rem + 5vw, 10.25rem);
+$max-height: min(100vh, 40rem);
+
+$break-md:48rem;
+$break-lg:64rem;
+$break-xl:70rem;
+$break-xxl:96rem;
+
+@mixin title-format {
+    font-family: $ff-titles;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+body {
+    font-family: $ff-body;
+    font-size: $fs-base;
+    background-color: $clr-white;
+    color: $clr-black;
+    min-height: 100vh;
+}
+
+main {
+    padding-inline: $mobile-inline-padding;
+    @media (min-width:$break-md) {
+        padding-inline:$desktop-inline-padding;
+    }
+}

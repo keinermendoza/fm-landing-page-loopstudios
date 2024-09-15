@@ -1,5 +1,4 @@
-@use '../globals/typography' as *;
-@use '../globals/config' as *;
+@use '../globals/variables' as *;
 
 .creations {
     display: flex;
@@ -11,13 +10,25 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 3.375rem;
+
+        @media (min-width:$break-md)  {
+            margin-bottom: 5rem;
+        }
         .title {
             flex-grow: 1;
             text-align: center;
             font-size: 1.75rem;
+
+            @media (min-width:$break-md) {
+                text-align: start;
+                font-size: $fs-desktop-h2;
+            }
         }
         .button-primary {
             display: none;
+            @media (min-width:$break-md) {
+                display: flex;
+            }
         }
     }
 
@@ -26,11 +37,21 @@
         gap: 1.5rem;
         font-size: 1.35rem;
         margin-bottom: 2.125rem;
+        @media (min-width:$break-md) {
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(4,1fr);
+            gap: 1.875rem;
+            margin-bottom: 11.5rem;
+
+        }
     }
 
     .button-secondary {
         display: flex;
         margin-inline: auto;
+        @media (min-width:$break-md) {
+            display: none;
+        }
     }
 
 }

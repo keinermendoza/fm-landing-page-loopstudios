@@ -1,7 +1,4 @@
-@use './config' as *;
-@use './typography' as *;
-
-
+@use './variables' as *;
 
 .container {
     max-width: $break-xl;

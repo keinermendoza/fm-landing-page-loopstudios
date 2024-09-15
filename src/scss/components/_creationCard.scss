@@ -1,8 +1,10 @@
-@use '../globals/typography' as *;
-@use '../globals/config' as *;
+@use '../globals/variables' as *;
 
 .creation-card {
     position: relative;
+    @media (min-width: $break-md) {
+        grid-row: span 2;
+    }
     & .background-image {
         width: 100%;
         z-index: 0;
