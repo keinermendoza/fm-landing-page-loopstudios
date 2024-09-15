@@ -23,18 +23,22 @@ export default function Footer() {
         <div className="social-links-wrapper">
           <ul className='social-links'>
             <NavItem external
+              ariaLabel='facebook'
               link="#about">
               <img src={facebookIcon} alt="" />
             </NavItem>
             <NavItem external
+              ariaLabel='twitter'
               link="#about">
               <img src={twitterIcon} alt="" />
             </NavItem>
             <NavItem external
+              ariaLabel='pinterest'
               link="#about">
               <img src={pinterestIcon} alt="" />
             </NavItem>
             <NavItem external
+              ariaLabel='instagram'
               link="#about">
               <img src={instagramIcon} alt="" />
             </NavItem>
