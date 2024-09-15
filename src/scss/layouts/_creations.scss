@@ -35,11 +35,11 @@
     .gallery {
         display: grid;
         gap: 1.5rem;
-        font-size: 1.35rem;
         margin-bottom: 2.125rem;
+
         @media (min-width:$break-md) {
             grid-template-columns: repeat(4,1fr);
-            grid-template-rows: repeat(4,1fr);
+            grid-template-rows: repeat(4, minmax(7.4rem, 1fr));
             gap: 1.875rem;
             margin-bottom: 11.5rem;
 

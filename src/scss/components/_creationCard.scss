@@ -1,18 +1,22 @@
 @use '../globals/variables' as *;
 
 .creation-card {
+    // to position the title
     position: relative;
-    @media (min-width: $break-md) {
+    
+    @media (min-width:$break-md) {
         grid-row: span 2;
     }
+
     & .background-image {
         width: 100%;
+        height: 100%;
         z-index: 0;
         object-fit: cover;
 
         
     }
-    /* this is for make more visible the text over the images */
+    /* This is to make the text more visible over the images. */
     &::after {
         content: "";
         position: absolute;
@@ -25,11 +29,11 @@
     }
 
     & .title {
+        font-size: clamp(1.35rem, .1rem + 2.5vw , 2rem);
         position: absolute;
-        bottom: 1.5rem;
-        left: 1.25rem;
+        bottom:  clamp(1.5rem, .1rem + 2.5vw , 2.5rem);
+        left: clamp(1.25rem, .1rem + 2.5vw ,2.5rem);
         color: $clr-white;
         z-index: 1;
-        font-size: inherit;
     }
 }

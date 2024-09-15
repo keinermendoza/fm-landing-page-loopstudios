@@ -7,8 +7,10 @@ import NavItem from '../ui/NavItem'
 
 export default function Footer() {
   return (
-    <footer className='footer'>
-        <nav className='navegation'>
+    <footer className='footer-wrapper '>
+      <div className="footer container">
+
+        <nav className='footer__navegation'>
             <img className='brand-logo' src={brandLogo} alt='Loopstudios' />
             <ul className='navegation__list'>
                 <NavItem link="#about">About</NavItem>
@@ -18,25 +20,29 @@ export default function Footer() {
                 <NavItem link="#support">Support</NavItem>
             </ul>
         </nav>
-        <ul className='social-links'>
-          <NavItem external
-            link="#about">
-            <img src={facebookIcon} alt="" />
-          </NavItem>
-          <NavItem external
-            link="#about">
-            <img src={twitterIcon} alt="" />
-          </NavItem>
-          <NavItem external
-            link="#about">
-            <img src={pinterestIcon} alt="" />
-          </NavItem>
-          <NavItem external
-            link="#about">
-            <img src={instagramIcon} alt="" />
-          </NavItem>
-        </ul>
-        <p className='author-owner'>2021 Loopstudios. All rights reserved. </p>
+        <div className="social-links-wrapper">
+          <ul className='social-links'>
+            <NavItem external
+              link="#about">
+              <img src={facebookIcon} alt="" />
+            </NavItem>
+            <NavItem external
+              link="#about">
+              <img src={twitterIcon} alt="" />
+            </NavItem>
+            <NavItem external
+              link="#about">
+              <img src={pinterestIcon} alt="" />
+            </NavItem>
+            <NavItem external
+              link="#about">
+              <img src={instagramIcon} alt="" />
+            </NavItem>
+          </ul>
+          <p className='author-owner'>© 2024 Keiner Mendoza Studios. All rights reserved.</p>
+        </div>
+      </div>
+
     </footer>
   )
 }
