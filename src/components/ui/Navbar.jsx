@@ -10,7 +10,9 @@ export default function Navbar() {
     return (
         <nav className={`header__navegation ${navbarIsOpen ? 'isOpen' : ''} container`}>
             <img className='brand-logo' src={brandLogo} alt='Loopstudios' />
-            <ul className={`navegation__list ${navbarIsOpen ? 'isOpen' : ''}`}>
+            <ul 
+                onClick={() => setNavbarIsOpen(false)}
+                className={`navegation__list ${navbarIsOpen ? 'isOpen' : ''}`}>
                 <NavItem link="#about">About</NavItem>
                 <NavItem link="#careers">Careers</NavItem>
                 <NavItem link="#events">Events</NavItem>
